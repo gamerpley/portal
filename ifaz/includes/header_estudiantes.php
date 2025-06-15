@@ -23,8 +23,8 @@ if (!isset($_SESSION['id'])) {
             <!-- Texto del rol: "Profesor" o "Estudiante" -->
             <small><?php echo ($_SESSION['rol'] == 1 ? 'Estudiante' : 'Profesor'); ?></small>
         </div>
-        <!-- Botón de ajustes (redirige a ajustes.php) -->
-        <button class="boton-ajustes" onclick="window.location.href='ajustes.php'">
+        <!-- Botón de ajustes dinámico según rol -->
+        <button class="boton-ajustes" onclick="window.location.href='<?php echo ($_SESSION['rol'] == 2 ? 'ajustes_profesor.php' : 'ajustes.php'); ?>'">
             <i class="fas fa-cog"></i> Ajustes
         </button>
         
