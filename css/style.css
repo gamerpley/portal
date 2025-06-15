@@ -1,0 +1,232 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    --azul-rey: #000080;        /* Color azul principal */
+    --azul-hover: #0000a0;      /* Color azul para hover */
+    --error: #ff3860;           /* Color rojo para mensajes de error */
+}
+
+/* ===== ESTILOS BASE Y RESET ===== */
+* {
+    margin: 0;                  /* Elimina márgenes por defecto */
+    padding: 0;                 /* Elimina rellenos por defecto */
+    box-sizing: border-box;     /* Incluye padding/bordes en el tamaño */
+    font-family: 'Arial', sans-serif; /* Fuente base */
+}
+
+body {
+    /* Degradado sutil de fondo */
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); 
+    display: flex;               /* Usa flexbox para centrado */
+    justify-content: center;     /* Centrado horizontal */
+    align-items: center;         /* Centrado vertical */
+    min-height: 100vh;          /* Altura mínima de viewport */
+    animation: fadeIn 0.5s ease-in-out; /* Animación al cargar */
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); } /* Estado inicial */
+    to { opacity: 1; transform: translateY(0); }      /* Estado final */
+}
+
+/* ===== CONTENEDOR DE LOGIN ===== */
+.login-container {
+    width: 380px;               /* Ancho fijo */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(8px);  /* Efecto vidrio esmerilado */
+    border-radius: 12px;         /* Bordes redondeados */
+    padding: 30px;              /* Espaciado interno */
+    /* Sombra con tono azulado */
+    box-shadow: 0 10px 25px rgba(0, 0, 128, 0.15); 
+    border: 1px solid rgba(0, 0, 128, 0.1); /* Borde sutil */
+}
+
+/* ===== CABECERA ===== */
+.login-header {
+    text-align: center;          /* Contenido centrado */
+    margin-bottom: 25px;         /* Margen inferior */
+}
+
+.login-header .logo {
+    width: 80px;                /* Tamaño del logo */
+    margin-bottom: 15px;        /* Espacio debajo del logo */
+}
+
+.login-header h1 {
+    color: var(--azul-rey);     /* Color azul */
+    font-size: 24px;            /* Tamaño grande */
+    margin-bottom: 5px;         /* Espacio reducido */
+}
+
+.login-header p {
+    color: #666;                /* Color gris */
+    font-size: 14px;            /* Tamaño pequeño */
+}
+
+/* ===== CAMPOS DE FORMULARIO ===== */
+.input-group {
+    margin-bottom: 20px;        /* Espacio entre campos */
+}
+
+.input-group label {
+    display: block;             /* Ocupa línea completa */
+    margin-bottom: 8px;         /* Espacio debajo */
+    color: var(--azul-rey);     /* Color azul */
+    font-weight: 600;           /* Negrita moderada */
+    font-size: 14px;            /* Tamaño consistente */
+}
+
+.input-group input {
+    width: 100%;               /* Ancho completo */
+    padding: 12px 15px;        /* Relleno cómodo */
+    border: 1px solid #ddd;    /* Borde gris claro */
+    border-radius: 6px;        /* Esquinas redondeadas */
+    font-size: 14px;           /* Tamaño legible */
+    transition: all 0.3s;      /* Transiciones suaves */
+}
+
+.input-group input:focus {
+    border-color: var(--azul-rey); /* Borde azul al enfocar */
+    /* Anillo de enfoque sutil */
+    box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1); 
+    outline: none;             /* Elimina outline por defecto */
+}
+
+/* Contenedor de contraseña */
+.password-wrapper {
+    position: relative;        /* Para posicionamiento absoluto */
+}
+
+.toggle-password {
+    position: absolute;        /* Posición sobre el input */
+    right: 15px;              /* Desde el borde derecho */
+    top: 50%;                 /* Centro vertical */
+    transform: translateY(-50%); /* Centrado preciso */
+    color: #777;              /* Color gris */
+    cursor: pointer;          /* Cursor tipo mano */
+}
+
+.toggle-password:hover {
+    color: var(--azul-rey);   /* Azul al pasar mouse */
+}
+
+/* ===== ESTILOS DE FONDO ===== */
+body {
+    /* Imagen de fondo */
+    background: url('/portal/ifaz/includes/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;    /* Cubre todo el espacio */
+    position: relative;       /* Para pseudo-elementos */
+}
+
+body::before {
+    content: '';             /* Necesario para pseudo-elemento */
+    position: absolute;      /* Cubre todo el body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay azul semitransparente */
+    background-color: rgba(0, 60, 120, 0.4); 
+    z-index: -1;             /* Detrás del contenido */
+}
+
+/* Alternativa con degradado */
+body.alternative::before {
+    background: linear-gradient(
+        to bottom right, 
+        rgba(0, 30, 90, 0.5), 
+        rgba(0, 80, 160, 0.7)
+    );
+}
+
+/* ===== BOTONES ===== */
+.btn-login {
+    width: 100%;             /* Ancho completo */
+    padding: 12px;           /* Relleno cómodo */
+    background: var(--azul-rey); /* Fondo azul */
+    color: white;            /* Texto blanco */
+    border: none;            /* Sin borde */
+    border-radius: 6px;      /* Esquinas redondeadas */
+    font-size: 16px;         /* Tamaño legible */
+    font-weight: 600;        /* Negrita */
+    cursor: pointer;         /* Cursor de mano */
+    transition: all 0.3s;    /* Transición suave */
+    margin-top: 10px;        /* Espacio superior */
+}
+
+.btn-login:hover {
+    background: var(--azul-hover); /* Azul más oscuro */
+    transform: translateY(-2px);  /* Efecto de levitación */
+    /* Sombra al pasar mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 128, 0.2); 
+}
+
+/* ===== PIE DE PÁGINA Y ENLACES ===== */
+.login-footer {
+    margin-top: 20px;        /* Espacio superior */
+    display: flex;           /* Usa flexbox */
+    justify-content: space-between; /* Distribuye espacio */
+}
+
+.link {
+    color: var(--azul-rey);  /* Color azul */
+    text-decoration: none;   /* Sin subrayado */
+    font-size: 13px;         /* Tamaño pequeño */
+    transition: all 0.3s;    /* Transición suave */
+}
+
+.link:hover {
+    text-decoration: underline; /* Subrayado al pasar mouse */
+}
+
+/* ===== MENSAJES DE ERROR ===== */
+.input-error {
+    color: var(--error);     /* Color rojo */
+    font-size: 12px;         /* Tamaño pequeño */
+    margin-top: 5px;         /* Espacio superior */
+    display: block;          /* Ocupa línea completa */
+    height: 14px;           /* Altura consistente */
+}
+
+/* ===== DISEÑO RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;         /* Más ancho en móviles */
+        padding: 20px;      /* Menos relleno */
+    }
+}
+
+/* ===== SELECTOR DE ROL ===== */
+.select-role {
+    width: 100%;            /* Ancho completo */
+    padding: 12px 15px;     /* Igual que inputs */
+    border: 1px solid #ddd; /* Borde gris */
+    border-radius: 6px;     /* Esquinas redondeadas */
+    font-size: 14px;        /* Tamaño consistente */
+    color: #333;            /* Texto oscuro */
+    background-color: white; /* Fondo blanco */
+    appearance: none;       /* Elimina estilo por defecto */
+    /* Flecha personalizada SVG */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000080'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    cursor: pointer;        /* Cursor de mano */
+    transition: all 0.3s;   /* Transición suave */
+}
+
+.select-role:focus {
+    border-color: var(--azul-rey); /* Borde azul */
+    box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1); /* Anillo de enfoque */
+    outline: none;          /* Elimina outline */
+}
+
+.select-role option {
+    padding: 10px;          /* Relleno cómodo */
+}
+
+/* ===== PLACEHOLDER DE CONTRASEÑA ===== */
+input[type="password"]::placeholder {
+    letter-spacing: 2px;    /* Espaciado entre caracteres */
+    font-family: monospace; /* Fuente monoespaciada */
+}

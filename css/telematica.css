@@ -1,0 +1,114 @@
+/* ===== BANNER PRINCIPAL ===== */
+.hero-telematica {
+    /* Fondo con gradiente azul semitransparente sobre imagen */
+    background: linear-gradient(rgba(0, 0, 128, 0.8), rgba(0, 0, 160, 0.8)), 
+                url('../img/banner-telematica.jpg') center/cover;
+    color: white;                   /* Texto en blanco para contraste */
+    padding: 80px 20px;             /* Espaciado interno grande (arriba/abajo) y pequeño (lados) */
+    text-align: center;             /* Alineación central del contenido */
+    border-radius: 10px;            /* Esquinas redondeadas */
+    margin-bottom: 30px;            /* Margen inferior para separación */
+}
+
+.hero-telematica h1 {
+    font-size: 2.5rem;              /* Tamaño de fuente grande para título principal */
+    margin-bottom: 15px;            /* Espacio después del título */
+}
+
+.hero-telematica .subtitulo {
+    font-size: 1.2rem;              /* Tamaño de fuente mediano para subtítulo */
+    opacity: 0.9;                   /* Ligera transparencia para estilo sutil */
+}
+
+/* ===== PERFIL PROFESIONAL ===== */
+.perfil-profesional {
+    background-color: #f0f8ff;      /* Fondo azul muy claro */
+    border-left: 5px solid var(--azul-rey); /* Borde izquierdo azul */
+    padding: 25px;                  /* Espaciado interno */
+    margin: 30px 0;                 /* Margen superior e inferior */
+    border-radius: 8px;             /* Esquinas redondeadas */
+}
+
+.perfil-profesional ul {
+    padding-left: 20px;             /* Sangría para la lista */
+}
+
+.perfil-profesional li {
+    margin-bottom: 8px;             /* Espacio entre ítems de lista */
+    position: relative;             /* Posicionamiento relativo para pseudo-elementos */
+    padding-left: 25px;             /* Espacio para el icono */
+}
+
+/* Triángulo como viñeta personalizada */
+.perfil-profesional li:before {
+    content: "▹";                  /* Símbolo de triángulo */
+    color: var(--azul-rey);         /* Color azul */
+    position: absolute;             /* Posicionamiento absoluto */
+    left: 0;                        /* Alineado a la izquierda */
+}
+
+/* ===== ENFOQUE EDUCATIVO ===== */
+.grid-enfoque {
+    display: grid;                  /* Layout con CSS Grid */
+    /* Columnas responsivas que se ajustan al ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;                      /* Espacio entre elementos */
+    margin: 25px 0;                 /* Margen superior e inferior */
+}
+
+.card-enfoque {
+    background: white;              /* Fondo blanco */
+    padding: 20px;                  /* Espaciado interno */
+    border-radius: 8px;             /* Esquinas redondeadas */
+    text-align: center;             /* Texto centrado */
+    box-shadow: var(--sombra);      /* Sombra suave */
+    transition: transform 0.3s;     /* Animación suave al hacer hover */
+}
+
+/* Efecto de levitación al pasar el mouse */
+.card-enfoque:hover {
+    transform: translateY(-5px);    /* Se mueve hacia arriba */
+}
+
+.card-enfoque i {
+    font-size: 2rem;                /* Tamaño grande para iconos */
+    color: var(--azul-rey);         /* Color azul */
+    margin-bottom: 10px;            /* Espacio debajo del icono */
+}
+
+/* Contenedor para ODS (Objetivos de Desarrollo Sostenible) */
+.ods-box {
+    border: 2px dashed var(--azul-rey); /* Borde discontinuo azul */
+    border-radius: 10px;            /* Esquinas redondeadas */
+    padding: 15px;                  /* Espaciado interno */
+    margin-top: 20px;               /* Margen superior */
+    display: flex;                  /* Layout flexible */
+    align-items: center;            /* Centrado vertical */
+    gap: 15px;                      /* Espacio entre elementos */
+}
+
+/* ===== PLAN DE ESTUDIOS ===== */
+.plan-estudio {
+    margin-top: 40px;               /* Margen superior grande */
+}
+
+.anio-card {
+    background: white;              /* Fondo blanco */
+    border-radius: 10px;            /* Esquinas redondeadas */
+    padding: 20px;                  /* Espaciado interno */
+    margin-bottom: 20px;            /* Margen inferior */
+    box-shadow: var(--sombra);      /* Sombra suave */
+}
+
+.materias-list {
+    columns: 2;                     /* Lista en 2 columnas */
+    list-style-type: none;          /* Sin viñetas */
+    padding-left: 0;                /* Sin sangría */
+}
+
+/* Responsive: Una columna en pantallas pequeñas */
+@media (max-width: 600px) {
+    .materias-list {
+        columns: 1;                 /* Una sola columna */
+    }
+}

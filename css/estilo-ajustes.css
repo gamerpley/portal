@@ -1,0 +1,179 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  --azul-oscuro: #000080;       /* Color azul oscuro principal */
+  --azul-hover: #0000a0;        /* Color azul para efectos hover */
+  --blanco: #ffffff;            /* Color blanco puro */
+  --gris-claro: #f5f5f5;        /* Fondo gris claro */
+  --gris-medio: #e0e0e0;        /* Borde gris medio */
+  --rojo: #e74c3c;              /* Color rojo para alertas */
+  --verde: #2ecc71;             /* Color verde (no utilizado actualmente) */
+  --sombra: 0 4px 12px rgba(0, 0, 128, 0.1); /* Sombra suave azulada */
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.contenedor-ajustes {
+  max-width: 800px;             /* Ancho máximo del contenedor */
+  margin: 3rem auto;            /* Margen superior e inferior de 3rem, centrado horizontalmente */
+  padding: 1.5rem;              /* Relleno interno */
+}
+
+/* ===== TARJETA DE CONTENIDO ===== */
+.tarjeta-ajustes {
+  background: var(--blanco);    /* Fondo blanco */
+  border-radius: 10px;          /* Bordes redondeados */
+  padding: 2rem;                /* Relleno interno generoso */
+  box-shadow: var(--sombra);    /* Sombra definida en variables */
+}
+
+/* ===== TÍTULO PRINCIPAL ===== */
+.titulo-ajustes {
+  color: var(--azul-oscuro);    /* Color azul oscuro */
+  text-align: center;           /* Texto centrado */
+  margin-bottom: 1.5rem;        /* Margen inferior */
+  font-size: 1.8rem;            /* Tamaño de fuente grande */
+  border-bottom: 2px solid var(--gris-medio); /* Línea divisora */
+  padding-bottom: 0.5rem;       /* Espacio bajo el texto */
+}
+
+/* ===== SECCIONES ===== */
+.seccion-datos, 
+.seccion-modificar, 
+.seccion-peligro {
+  margin-bottom: 2rem;          /* Margen inferior entre secciones */
+  padding: 1.5rem;              /* Relleno interno */
+  border-radius: 8px;           /* Bordes redondeados */
+  background: var(--gris-claro); /* Fondo gris claro */
+}
+
+.seccion-peligro {
+  border-left: 4px solid var(--rojo); /* Borde izquierdo rojo para destacar peligro */
+}
+
+/* ===== LISTA DE DATOS ===== */
+.lista-datos {
+  list-style: none;             /* Elimina viñetas de lista */
+}
+
+.lista-datos li {
+  padding: 0.8rem 0;            /* Espaciado vertical entre ítems */
+  border-bottom: 1px solid var(--gris-medio); /* Línea divisora */
+  display: flex;                /* Diseño flexible */
+  justify-content: space-between; /* Distribuye espacio entre elementos */
+}
+
+.lista-datos strong {
+  color: var(--azul-oscuro);    /* Texto en azul oscuro */
+  min-width: 120px;             /* Ancho mínimo para alinear etiquetas */
+  display: inline-block;        /* Permite aplicar width */
+}
+
+/* ===== FORMULARIOS ===== */
+.grupo-formulario {
+  margin-bottom: 1.2rem;        /* Espacio entre grupos de campos */
+}
+
+.grupo-formulario label {
+  display: block;               /* Hace que la etiqueta ocupe toda la línea */
+  margin-bottom: 0.5rem;        /* Espacio bajo la etiqueta */
+  color: var(--azul-oscuro);    /* Color azul oscuro */
+  font-weight: 500;             /* Grosor de fuente seminegrita */
+}
+
+.grupo-formulario input:not([type="submit"]) {
+  width: 100%;                  /* Ancho completo */
+  padding: 0.8rem;              /* Relleno interno */
+  border: 1px solid var(--gris-medio); /* Borde gris */
+  border-radius: 6px;           /* Bordes redondeados */
+  background: var(--blanco);     /* Fondo blanco */
+}
+
+/* ===== CAMPOS BLOQUEADOS (CON CANDADO) ===== */
+.campo-con-candado {
+  position: relative;           /* Permite posicionamiento absoluto del icono */
+  display: flex;
+  align-items: center;
+}
+
+.campo-con-candado .icono-candado {
+  position: absolute;           /* Posiciona el icono dentro del campo */
+  right: 10px;                  /* A 10px del borde derecho */
+  color: #666;                  /* Color gris */
+  pointer-events: none;         /* Evita que el icono intercepte clicks */
+}
+
+.campo-deshabilitado {
+  padding-right: 35px !important; /* Espacio extra para el icono de candado */
+  background: var(--gris-claro) !important; /* Fondo gris para indicar deshabilitado */
+  color: #666;                  /* Texto gris */
+  width: 100%;
+}
+
+/* ===== BOTONES ===== */
+.boton-accion {
+  display: inline-block;        /* Permite aplicar padding y margin */
+  padding: 0.8rem 1.5rem;       /* Relleno interno */
+  border-radius: 6px;           /* Bordes redondeados */
+  font-weight: 500;             /* Grosor de fuente */
+  cursor: pointer;              /* Cursor en forma de mano */
+  transition: all 0.3s;         /* Transición suave para efectos hover */
+  text-align: center;
+  text-decoration: none;
+  border: none;                /* Sin borde */
+}
+
+.boton-primario {
+  background: var(--azul-oscuro); /* Fondo azul oscuro */
+  color: var(--blanco);         /* Texto blanco */
+}
+
+.boton-primario:hover {
+  background: var(--azul-hover); /* Color hover más claro */
+}
+
+.boton-peligro {
+  background: var(--rojo);      /* Fondo rojo */
+  color: var(--blanco);         /* Texto blanco */
+}
+
+.boton-peligro:hover {
+  background: #c0392b;          /* Rojo más oscuro al hacer hover */
+}
+
+.boton-volver {
+  display: inline-block;
+  padding: 0.5rem 1rem !important; /* Relleno más compacto */
+  border-radius: 6px;
+  background: var(--gris-claro); /* Fondo gris claro */
+  color: var(--azul-oscuro);     /* Texto azul */
+  border: 1px solid var(--azul-oscuro); /* Borde azul */
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 1rem;             /* Margen superior */
+  transition: all 0.3s;
+}
+
+.boton-volver:hover {
+  background: var(--gris-medio); /* Fondo gris medio al hacer hover */
+}
+
+.boton-block {
+  display: block;               /* Ocupa todo el ancho disponible */
+  width: 100%;
+}
+
+/* ===== DISEÑO RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contenedor-ajustes {
+    padding: 0.5rem;            /* Menos padding en móviles */
+  }
+  
+  .tarjeta-ajustes {
+    padding: 1.5rem;            /* Padding reducido */
+  }
+  
+  .lista-datos li {
+    flex-direction: column;      /* Apila elementos en móviles */
+    gap: 0.3rem;                /* Espacio entre elementos apilados */
+  }
+}

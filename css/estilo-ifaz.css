@@ -1,0 +1,280 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    --azul-rey: #000080;        /* Color azul principal */
+    --azul-hover: #0000a0;      /* Color azul para hover */
+    --azul-claro: #E6F0FF;      /* Azul claro para fondos */
+    --texto: #333333;           /* Color principal de texto */
+    --fondo: #F8F9FA;           /* Color de fondo general */
+    --sombra: 0 2px 10px rgba(0, 0, 128, 0.1); /* Sombra suave azulada */
+    --blanco: #FFFFFF;          /* Blanco puro */
+}
+
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo); /* Fondo general */
+    color: var(--texto);           /* Color de texto predeterminado */
+    display: grid;                  /* Usa CSS Grid */
+    grid-template-columns: 220px 1fr; /* Sidebar + contenido principal */
+    min-height: 100vh;              /* Altura mínima de toda la pantalla */
+}
+
+/* ===== BANNER ===== */
+.contenedor-banner {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;               /* Oculta exceso de imagen */
+    box-shadow: var(--sombra);      /* Sombra suave */
+    display: flex;
+    align-items: center;            /* Centra verticalmente */
+}
+
+.banner-estudiante {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* Ajusta imagen sin distorsión */
+    transition: transform 0.5s ease; /* Animación suave al hacer hover */
+}
+
+.banner-estudiante:hover {
+    transform: scale(1.03);         /* Efecto zoom al pasar el cursor */
+}
+
+/* ===== SIDEBAR ===== */
+.header-lateral {
+    background: var(--azul-rey);    /* Fondo azul */
+    color: var(--blanco);           /* Texto blanco */
+    padding: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 128, 0.1); /* Sombra lateral */
+    display: flex;
+    flex-direction: column;         /* Elementos apilados verticalmente */
+}
+
+/* Logo de la escuela */
+.logo-escuela {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisora sutil */
+}
+
+.logo-header {
+    max-width: 160px;               /* Tamaño controlado */
+    height: auto;
+    transition: transform 0.3s;     /* Animación suave */
+}
+
+.logo-header:hover {
+    transform: scale(1.05);         /* Efecto zoom al pasar el cursor */
+}
+
+/* Sección de usuario */
+.seccion-usuario {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisora */
+    text-align: center;
+}
+
+.nombre-usuario {
+    font-weight: 600;               /* Texto seminegrita */
+    margin: 10px 0 15px;
+    font-size: 1.1rem;              /* Tamaño de fuente */
+    color: var(--blanco);
+}
+
+/* Botón de ajustes */
+.boton-ajustes {
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    color: var(--blanco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;           /* Transición suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;                       /* Espacio entre icono y texto */
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.boton-ajustes:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fondo más claro al hover */
+}
+
+/* Menú de navegación */
+.menu-menciones {
+    margin-top: 20px;
+    flex-grow: 1;                   /* Ocupa espacio disponible */
+    padding: 0 15px;
+}
+
+/* ===== BOTÓN CERRAR SESIÓN ===== */
+.boton-logout {
+    background-color: #e74c3c;       /* Rojo vibrante */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;       /* Transición suave */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.boton-logout:hover {
+    background-color: #c0392b;       /* Rojo más oscuro al hover */
+    transform: translateY(-2px);     /* Efecto de levitación */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+.boton-logout i {
+    font-size: 1.1rem;              /* Tamaño del icono */
+}
+
+/* Enlaces del menú */
+.menu-menciones a {
+    display: block;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 12px 15px;
+    transition: all 0.3s;           /* Transición suave */
+    border-left: 3px solid transparent; /* Borde izquierdo invisible por defecto */
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.menu-menciones a:hover {
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    border-left: 3px solid var(--azul-hover); /* Borde izquierdo azul */
+}
+
+.menu-menciones i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;              /* Espacio entre icono y texto */
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.main-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;  /* Dos columnas (2/3 - 1/3) */
+    gap: 30px;                       /* Espacio entre columnas */
+}
+
+/* Título de bienvenida */
+.titulo-bienvenida {
+    margin-bottom: 40px;
+}
+
+.titulo-bienvenida h1 {
+    font-size: 2.5rem;
+    color: var(--azul-rey);          /* Color azul */
+    margin-bottom: 15px;
+    line-height: 1.3;                /* Espaciado entre líneas */
+}
+
+.titulo-bienvenida .subtitulo {
+    color: var(--azul-hover);        /* Color azul más claro */
+    font-size: 1.2rem;
+    font-weight: 400;                /* Peso de fuente normal */
+}
+
+/* Tarjetas de menciones */
+.mencion-card {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--azul-rey); /* Borde lateral azul */
+}
+
+.mencion-card h3 {
+    color: var(--azul-rey);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;                       /* Espacio entre icono y texto */
+}
+
+/* Espacio para imagen */
+.espacio-imagen {
+    background: var(--azul-claro);    /* Fondo azul claro */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul-rey);
+    box-shadow: var(--sombra);
+    border: 2px dashed var(--azul-hover); /* Borde discontinuo */
+    padding: 20px;
+    text-align: center;
+}
+
+.espacio-imagen i {
+    font-size: 2.5rem;               /* Icono grande */
+    margin-bottom: 15px;
+    opacity: 0.7;                    /* Transparencia sutil */
+}
+
+/* ===== DISEÑO RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;   /* Sidebar se convierte en header */
+    }
+    
+    .header-lateral {
+        padding: 15px 0;             /* Padding reducido */
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;  /* Una sola columna */
+        padding: 20px;              /* Padding reducido */
+    }
+    
+    .titulo-bienvenida h1 {
+        font-size: 2rem;             /* Tamaño de fuente reducido */
+    }
+    
+    .menu-menciones {
+        display: flex;               /* Menú horizontal en móviles */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;                    /* Espacio entre elementos */
+        padding: 0 10px;
+    }
+    
+    .menu-menciones a {
+        padding: 8px 12px;          /* Padding reducido */
+        font-size: 0.85rem;         /* Tamaño de fuente reducido */
+        margin-bottom: 0;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .titulo-bienvenida h1 {
+        font-size: 1.6rem;          /* Tamaño de fuente más pequeño */
+    }
+    
+    .mencion-card {
+        padding: 15px;              /* Padding reducido */
+    }
+    
+    .mencion-card h3 {
+        font-size: 1.1rem;          /* Tamaño de fuente reducido */
+    }
+}
